@@ -7,6 +7,7 @@
 #include <time.h>
 
 anjay_t *anjay;
+char *host;
 
 // Installs Security Object and adds and instance of it.
 // An instance of Security Object provides information needed to connect to
@@ -21,7 +22,7 @@ static int setup_security_object(anjay_t *anjay) {
 
     anjay_security_instance_t security_instance = {
         .ssid = 1,
-        .server_uri = "coap://loja-dev.tk:5683",
+        .server_uri = host,
         .security_mode = ANJAY_SECURITY_NOSEC,
         .public_cert_or_psk_identity = (const uint8_t *) PSK_IDENTITY,
         .public_cert_or_psk_identity_size = strlen(PSK_IDENTITY),
@@ -72,10 +73,11 @@ static int setup_server_object(anjay_t *anjay) {
 }
 
 int main(int argc, char *argv[]){
-	if (argc != 2) {
-        avs_log(tutorial, ERROR, "usage: %s ENDPOINT_NAME", argv[0]);
+	if (argc != 3) {
+        avs_log(tutorial, ERROR, "usage: %s ENDPOINT_NAME HOST:PORT", argv[0]);
         return -1;
     }
+    	host = argv[2];
 
 
 	const anjay_configuration_t CONFIG = {
