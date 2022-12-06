@@ -5,12 +5,15 @@ git clone --recursive https://github.com/igortomiatti/Cliente-LWM2M.git
 2º) COMPILAR E INSTALAR BIBLIOTECA ANJAY
 
 cd Anjay
+
 cmake . && make && sudo make install
 
 3º) COMPILAR APLICAÇÃO
 
 cd ..
+
 cd app
+
 cmake . && make
 
 4º) EXECUTAR APLICAÇÃO
