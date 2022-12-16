@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://openmobilealliance.org/tech/profiles/LWM2M.xsd">
+  <Object ObjectType="MODefinition">
+        <Name>Configuracao Wi-Sun</Name>
+        <Description1><![CDATA[DLMS Wi-SUN setup - class_id = 95, version 0.]]></Description1>
+        <ObjectID>32769</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:32769</ObjectURN>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Mandatory</Mandatory>
+        <Resources>
+            <Item ID="0">
+                <Name>Network Name</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Alguma descricao.]]></Description>
+            </Item>
+            <Item ID="1">
+                <Name>PAN ID</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>Discovery iMin</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="3">
+                <Name>Discovery doublings</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="4">
+                <Name>Broadcast timeout min</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="5">
+                <Name>Broadcast timeout max (doublings)</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="6">
+                <Name>RPL DIO minimum interval</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="7">
+                <Name>RPL DIO timeoutmax (doublings)</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="8">
+                <Name>Channel plan</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="9">
+                <Name>Channel function</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="10">
+                <Name>Excluded channels</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Multiple</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="11">
+                <Name>Tamanho maximo do payload</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="12">
+                <Name>Endereço IPv6 do Servidor MDC</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="13">
+                <Name>Porta UDP do Servidor MDC</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="14">
+                <Name>Reset</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+        </Resources>
+        <Description2></Description2>
+    </Object>
+</LWM2M>
