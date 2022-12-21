@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://openmobilealliance.org/tech/profiles/LWM2M.xsd">
   <Object ObjectType="MODefinition">
-        <Name>Configuracao Wi-Sun</Name>
-        <Description1><![CDATA[DLMS Wi-SUN setup - class_id = 95, version 0.]]></Description1>
-        <ObjectID>32769</ObjectID>
-        <ObjectURN>urn:oma:lwm2m:x:32769</ObjectURN>
+        <Name>Diagnóstico Wi-Sun</Name>
+        <Description1><![CDATA[DLMS Wi-SUN diagnostics - calss_id=96, version 0.]]></Description1>
+        <ObjectID>32770</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:32770</ObjectURN>
         <MultipleInstances>Single</MultipleInstances>
         <Mandatory>Mandatory</Mandatory>
         <Resources>
             <Item ID="0">
-                <Name>Network Name</Name>
-                <Operations>RW</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Optional</Mandatory>
-                <Type>String</Type>
-                <RangeEnumeration></RangeEnumeration>
-                <Units></Units>
-                <Description><![CDATA[Alguma descricao.]]></Description>
-            </Item>
-            <Item ID="1">
-                <Name>PAN ID</Name>
-                <Operations>RW</Operations>
+                <Name>Identificação dispositivo</Name>
+                <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Integer</Type>
+                <Type>String</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
-            <Item ID="2">
-                <Name>Discovery iMin</Name>
+			<Item ID="1">
+                <Name>Versão do protocolo Wi-SUN</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
+			<Item ID="2">
+                <Name>IF - Número de dispositivos físicos conectados</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
@@ -39,17 +39,17 @@
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="3">
-                <Name>Discovery doublings</Name>
+                <Name>IF - Endereço do dispositivo físico</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
-                <Type>Integer</Type>
+                <Type>String</Type>
                 <RangeEnumeration/>
                 <Units></Units>
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="4">
-                <Name>Broadcast timeout min</Name>
+                <Name>IF - Contador de Pacotes Recebidos para interface</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
@@ -59,7 +59,7 @@
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="5">
-                <Name>Broadcast timeout max (doublings)</Name>
+                <Name>IF - Contador de Pacotes Enviados pela interface</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
@@ -69,7 +69,7 @@
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="6">
-                <Name>RPL DIO minimum interval</Name>
+                <Name>IF - Contador de erro Wi-SUN no envio do pacote</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
@@ -79,7 +79,7 @@
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="7">
-                <Name>RPL DIO timeoutmax (doublings)</Name>
+                <Name>EW - RX Success Count</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
@@ -89,7 +89,7 @@
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="8">
-                <Name>Channel plan</Name>
+                <Name>EW - TX Success Count</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
@@ -99,7 +99,7 @@
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="9">
-                <Name>Channel function</Name>
+                <Name>EW - TX FailCount</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
@@ -109,9 +109,9 @@
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="10">
-                <Name>Excluded channels</Name>
+                <Name>EW - TX Retry Count</Name>
                 <Operations>R</Operations>
-                <MultipleInstances>Multiple</MultipleInstances>
+                <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
                 <Type>Integer</Type>
                 <RangeEnumeration/>
@@ -119,7 +119,7 @@
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="11">
-                <Name>Tamanho maximo do payload</Name>
+                <Name>EW - RSSI</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
@@ -129,17 +129,7 @@
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="12">
-                <Name>Endereço IPv6 do Servidor MDC</Name>
-                <Operations>R</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Mandatory</Mandatory>
-                <Type>String</Type>
-                <RangeEnumeration/>
-                <Units></Units>
-                <Description><![CDATA[Some description.]]></Description>
-            </Item>
-			<Item ID="13">
-                <Name>Porta UDP do Servidor MDC</Name>
+                <Name>EW - Intervalo de Envio</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
@@ -148,8 +138,18 @@
                 <Units></Units>
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
+			<Item ID="13">
+                <Name>PARENT_IPV6_PREFERRED</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration/>
+                <Units></Units>
+                <Description><![CDATA[Some description.]]></Description>
+            </Item>
 			<Item ID="14">
-                <Name>MAC Address</Name>
+                <Name>PARENT_IPV6_ALTERNATIVE</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
@@ -159,51 +159,11 @@
                 <Description><![CDATA[Some description.]]></Description>
             </Item>
 			<Item ID="15">
-                <Name>Frequency mode</Name>
+                <Name>Time to Connect</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Mandatory</Mandatory>
                 <Type>Integer</Type>
-                <RangeEnumeration/>
-                <Units></Units>
-                <Description><![CDATA[Some description.]]></Description>
-            </Item>
-			<Item ID="16">
-                <Name>Channel</Name>
-                <Operations>R</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Mandatory</Mandatory>
-                <Type>Integer</Type>
-                <RangeEnumeration/>
-                <Units></Units>
-                <Description><![CDATA[Some description.]]></Description>
-            </Item>
-			<Item ID="17">
-                <Name>Transmission Power</Name>
-                <Operations>R</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Mandatory</Mandatory>
-                <Type>Integer</Type>
-                <RangeEnumeration/>
-                <Units></Units>
-                <Description><![CDATA[Some description.]]></Description>
-            </Item>
-			<Item ID="18">
-                <Name>WSUN Mode</Name>
-                <Operations>R</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Mandatory</Mandatory>
-                <Type>Integer</Type>
-                <RangeEnumeration/>
-                <Units></Units>
-                <Description><![CDATA[Some description.]]></Description>
-            </Item>
-			<Item ID="19">
-                <Name>Reset</Name>
-                <Operations>E</Operations>
-                <MultipleInstances>Single</MultipleInstances>
-                <Mandatory>Mandatory</Mandatory>
-                <Type></Type>
                 <RangeEnumeration/>
                 <Units></Units>
                 <Description><![CDATA[Some description.]]></Description>
