@@ -10,6 +10,7 @@ find_package(anjay REQUIRED)
 
 add_executable(${PROJECT_NAME} src/main.c
 		src/config_wisun.c
+		src/diagnostico_wisun.c
 		src/device.c
 		src/time_object.c)
 target_include_directories(${PROJECT_NAME} PRIVATE

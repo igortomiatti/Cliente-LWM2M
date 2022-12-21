@@ -3,6 +3,7 @@
 #include <anjay/server.h>
 #include <avsystem/commons/avs_log.h>
 #include <config_wisun.h>
+#include <diagnostico_wisun.h>
 #include <device.h>
 #include <time.h>
 
@@ -82,9 +83,9 @@ int main(int argc, char *argv[]){
 
 	const anjay_configuration_t CONFIG = {
 	        .endpoint_name = argv[1],
-			.in_buffer_size = 2048,
-			.out_buffer_size = 2048,
-			.msg_cache_size = 2048
+			.in_buffer_size = 4000,
+			.out_buffer_size = 4000,
+			.msg_cache_size = 4000
 	};
 	anjay = anjay_new(&CONFIG);
 	if (!anjay) {
@@ -97,16 +98,6 @@ int main(int argc, char *argv[]){
 	if (setup_security_object(anjay) || setup_server_object(anjay)) {
 		avs_log(tutorial, ERROR, "Could not create Anjay object");
 		result = -1;
-	}
-
-	const anjay_dm_object_def_t **time_object = NULL;
-	if (!result) {
-		time_object = time_object_create();
-		if (time_object) {
-			result = anjay_register_object(anjay, time_object);
-		} else {
-			result = -1;
-		}
 	}
 
 	const anjay_dm_object_def_t **device_object = NULL;
@@ -128,6 +119,18 @@ int main(int argc, char *argv[]){
 			result = -1;
 		}
 	}
+	
+	const anjay_dm_object_def_t **diagnostico_wisun = NULL;
+	if (!result) {
+		diagnostico_wisun = diagnostico_wi_sun_object_create();
+		if (diagnostico_wisun) {
+			result = anjay_register_object(anjay, diagnostico_wisun);
+		} else {
+			result = -1;
+		}
+	}
+	
+	
 
 	if (!result) {
         result = anjay_event_loop_run(

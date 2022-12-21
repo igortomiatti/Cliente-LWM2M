@@ -15,6 +15,7 @@
 #include <avsystem/commons/avs_defs.h>
 #include <avsystem/commons/avs_memory.h>
 #include "device.h"
+#include "def.h"
 
 
 /**
@@ -338,16 +339,16 @@ static int resource_read(anjay_t *anjay,
 
     case RID_MODEL_NUMBER:
         assert(riid == ANJAY_ID_INVALID);
-        return anjay_ret_string(ctx, "1.1"); // TODO.
+        return anjay_ret_string(ctx, MODEL_NUMBER); // TODO.
 
     case RID_SERIAL_NUMBER:
         assert(riid == ANJAY_ID_INVALID);
         char mac[24] = {0};
-        return anjay_ret_string(ctx, mac); // TODO
+        return anjay_ret_string(ctx, MAC_ADDRESS); // TODO
 
     case RID_FIRMWARE_VERSION:
         assert(riid == ANJAY_ID_INVALID);
-        return anjay_ret_string(ctx, "1.0"); // TODO
+        return anjay_ret_string(ctx, FIRMWARE_VERSION); // TODO
 
     case RID_AVAILABLE_POWER_SOURCES:
         // TODO: extract Resource Instance
@@ -395,11 +396,11 @@ static int resource_read(anjay_t *anjay,
 
     case RID_HARDWARE_VERSION:
         assert(riid == ANJAY_ID_INVALID);
-        return anjay_ret_string(ctx, ""); // TODO
+        return anjay_ret_string(ctx, HARDWARE_VERSION); // TODO
 
     case RID_SOFTWARE_VERSION:
         assert(riid == ANJAY_ID_INVALID);
-        return anjay_ret_string(ctx, ""); // TODO
+        return anjay_ret_string(ctx, SOFTWARE_VERSION); // TODO
 
     case RID_BATTERY_STATUS:
         assert(riid == ANJAY_ID_INVALID);
